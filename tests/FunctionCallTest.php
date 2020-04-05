@@ -432,6 +432,31 @@ class FunctionCallTest extends TestCase
                         return explode($d, $s);
                     }',
             ],
+            'implodeWithConst' => [
+                '<?php
+                     /** @return "str" */
+                    function imploder(): string
+                    {
+                        return implode(["s", "t", "r"]);
+                    }',
+            ],
+            'implodeWithDelim' => [
+                '<?php
+                     /** @return "s:t:r" */
+                    function imploder(): string
+                    {
+                        return implode(":", ["s", "t", "r"]);
+                    }',
+            ],
+            'implodeWithVariable' => [
+                '<?php
+                     /** @return "s:t:r" */
+                    function imploder(): string
+                    {
+                        $arr = ["s", "t", "r"];
+                        return implode(":", $arr);
+                    }',
+            ],
             'allowPossiblyUndefinedClassInClassExists' => [
                 '<?php
                     if (class_exists(Foo::class)) {}',
