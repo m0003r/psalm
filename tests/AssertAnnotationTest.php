@@ -529,8 +529,7 @@ class AssertAnnotationTest extends TestCase
 
                     interface BarType {
                         public function bar(): void;
-                    }
-'
+                    }'
             ],
             'assertThisTypeSimpleCombined' => [
                 '<?php
